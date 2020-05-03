@@ -42,7 +42,18 @@ name: case
 
 # Case Study: November 22th, 2020
 
-.left-column[IOP08 (Severe, Upscale Growth handoff) of the RELAMPAGO field campaign] 
+&lt;style type="text/css"&gt;
+.right-column{
+  padding-top: 0;
+}
+&lt;/style&gt;
+
+.left-column[
+IOP08 
+- Severe, 
+- Upscale Growth handoff
+
+of the RELAMPAGO field campaign] 
 
 .right-column[![gif](fig/caso_20181122.gif)]
 
@@ -53,8 +64,8 @@ name: model-conf
 .pull-left[ 
 - **Resolution:** 10 km.
 - **Initial and boundary conditions:** GFS (deterministic 0.5º)
-- **Ensemble:** 60 members with multi-physics and random perturbations. 
-- 9 combinations of Cumulis and PBL **parameterizations:**
+- **Ensemble:** 60 members with multi-physics squeme and random perturbations. 
+  - 9 combinations of Cumulis and PBL **parameterizations:**
 
 | Cumulus | PBL |
 |---|---|
@@ -64,7 +75,7 @@ name: model-conf
 ]
 
 .pull-right[ 
-&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-1-1.png" width="504" /&gt;
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-2-1.png" width="504" /&gt;
 
 ]
 
@@ -86,24 +97,22 @@ name: exp-config
 
 | Obs type | CONV | AUT | SATWND |
 |:---:|:---:|:---:|:---:|
-| ADPSFC | ✔ ️| ✔️ |  ✔️ |
-| AUTSFC |   | ✔️ | ✔️ |
-| ADPUPA | ✔  | ✔ ️|✔️ |
-| AIRCFT | ✔️ | ✔ | ✔️  |
-| AIRCAR | ✔️ | ✔ | ✔️  |
-| SFCSHP | ✔️ | ✔  | ✔️  |
-| ASCATW | ✔️ | ✔ | ✔️  |
-| SATWND |   |   | ✔️  |
+| ADPSFC | ✔ | ✔ | ✔ |
+| ADPUPA | ✔ | ✔ | ✔ |
+| AIRCFT | ✔ | ✔ | ✔ |
+| AIRCAR | ✔ | ✔ | ✔ |
+| SFCSHP | ✔ | ✔ | ✔ |
+| ASCATW | ✔ | ✔ | ✔ | 
+| AUTSFC |   | ✔ | ✔ |
+| SATWND |   |   | ✔ |
 
 
 ]
-
 
 .pull-right[ 
-&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-2-1.png" width="504" /&gt;
-
-
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-3-1.png" width="504" /&gt;
 ]
+
 ---
 class: center, inverse, middle
 
@@ -124,113 +133,208 @@ The standar deviation of `\(y\)` is a measure of systematic over- or under- disp
 
 A perfect system has no bias ( `\(b=0\)` ) and dispersion equal to 1 ( `\(d=1\)`, con `\(d&gt;1 \rightarrow underdispersive\)` y `\(d&lt;1 \rightarrow overdispersive\)`).
 
-
-&lt;!-- ```{r echo=FALSE} --&gt;
-&lt;!-- fread("rcrv_uvt_superficie_temporal.csv") %&gt;%  --&gt;
-&lt;!--   .[, date := ymd_hms(date)] %&gt;%  --&gt;
-&lt;!--   melt(measure.vars = c("mean.y", "sd.y")) %&gt;%  --&gt;
-&lt;!--   ggplot(aes(date, value)) + --&gt;
-&lt;!--   geom_hline(yintercept = c(0, 1), color = "darkgray") + --&gt;
-&lt;!--   geom_line(aes(color = factor(type), linetype = variable)) + --&gt;
-&lt;!--   scale_x_datetime(date_breaks = "6 hours", date_labels = "%H:%m %b %d") + --&gt;
-&lt;!--   facet_wrap(~var, ncol = 1, scales = "free_y") + --&gt;
-&lt;!--   labs(y = "Reduced Centered Random Variable", --&gt;
-&lt;!--        subtitle = "Surface observations", --&gt;
-&lt;!--        color = "Obs type", --&gt;
-&lt;!--        linetype = "") + --&gt;
-&lt;!--   theme_minimal() --&gt;
-
-&lt;!-- fread("rcrv_uvt_superficie.csv") %&gt;%  --&gt;
-&lt;!--   knitr::kable() --&gt;
-&lt;!-- ``` --&gt;
-
 ---
-
 name: rcrv-box-wind
 
 ### Wind 
 
-&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-3-1.png" width="1152" style="display: block; margin: auto;" /&gt;
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-4-1.png" width="1152" style="display: block; margin: auto;" /&gt;
+
 ---
 name: rcrv-box-temp
 
 ### Temperature
-&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-4-1.png" width="1152" style="display: block; margin: auto;" /&gt;
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-5-1.png" width="1152" style="display: block; margin: auto;" /&gt;
 
 
 ---
 name: rcrv-profile
 
-&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-5-1.png" width="576" style="display: block; margin: auto;" /&gt;
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-6-1.png" width="576" style="display: block; margin: auto;" /&gt;
 
 
 ---
 name: mcape
 
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-7-1.png" width="1008" style="display: block; margin: auto;" /&gt;
 
-&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-6-1.png" width="1008" style="display: block; margin: auto;" /&gt;
+---
+name: subdominio
+
+## Vertical structure 
+
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-8-1.png" width="504" /&gt;
+
 
 ---
 name: temp
 
 .pull-left[ 
-&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-7-1.png" width="504" /&gt;
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-9-1.png" width="504" /&gt;
 ]
 .pull-right[ 
-&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-8-1.png" width="504" /&gt;
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-10-1.png" width="504" /&gt;
 ]
 
 ---
-
 name: hum
 
 .pull-left[ 
-&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-9-1.png" width="504" /&gt;
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-11-1.png" width="504" /&gt;
 
 ]
 
 .pull-right[ 
 
-&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-10-1.png" width="504" /&gt;
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-12-1.png" width="504" /&gt;
+]
+
+---
+name: u-v
+.pull-left[ 
+
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-13-1.png" width="504" /&gt;
+]
+
+.pull-right[ 
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-14-1.png" width="504" /&gt;
+
+]
+
+---
+name: v
+.pull-left[ 
+
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-15-1.png" width="504" /&gt;
+]
+
+.pull-right[ 
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-16-1.png" width="504" /&gt;
+
+]
+
+
+---
+name: spd
+.pull-left[ 
+
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-17-1.png" width="504" /&gt;
+]
+
+.pull-right[ 
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-18-1.png" width="504" /&gt;
+
 ]
 
 ---
 name: hum-field
 
-&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-11-1.png" width="1008" style="display: block; margin: auto;" /&gt;
----
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-19-1.png" width="1008" style="display: block; margin: auto;" /&gt;
 
+---
 name: hum-diff
 
-&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-12-1.png" width="1008" style="display: block; margin: auto;" /&gt;
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-20-1.png" width="1008" style="display: block; margin: auto;" /&gt;
 
 
 ---
 class: inverse, center, middle
+name: fcst
 
 # Forecast comparison
 
 ---
-
 name: pp-acum
 
-&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-13-1.png" width="1008" style="display: block; margin: auto;" /&gt;
+&lt;style type="text/css"&gt;
 
+.right-column{
+  padding-top: 0;
+}
+
+.left-column{
+  float: left;
+  pading-left: 0;
+  pading-right: 0;
+  padding-top: 40px;
+  width: 25%;
+}
+&lt;/style&gt;
+
+.left-column[
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-22-1.png" width="360" style="display: block; margin: auto auto auto 0;" /&gt;
+]
+
+.right-column[
+
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-23-1.png" width="720" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
 
 ---
-
 name: pp-hov
 
-&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-14-1.png" width="1008" style="display: block; margin: auto;" /&gt;
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-24-1.png" width="1008" style="display: block; margin: auto;" /&gt;
 
 ---
 
-Place holder for FSS
+### FSS
+
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-25-1.png" width="576" style="display: block; margin: auto;" /&gt;
 
 ---
+## Comparison with RELAMPAGO sounding
 
-Place holder for sounding
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-26-1.png" width="504" /&gt;
 
+---
+name: sounding-00Z
+
+.pull-left[
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-27-1.png" width="504" /&gt;
+]
+
+.pull-right[
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-28-1.png" width="504" /&gt;
+
+]
+
+---
+name: sounding-06Z
+
+.pull-left[
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-29-1.png" width="504" /&gt;
+]
+
+.pull-right[
+&lt;img src="98_Presentacion2050520_files/figure-html/unnamed-chunk-30-1.png" width="504" /&gt;
+]
+
+---
+class: inverse
+name: future
+
+# Future work
+
+**Next steps**
+
+- Run a new experiment assimilating Satellite radiance/brightness temperature observations (I have to learn how to do it first!)
+- Run and analyze ensembles forecast inicialized from each experiment
+- Validation of forecasts using observations from the RELAMPAGO campaign
+
+--
+
+**Things for the future**
+
+- Evaluate the impact of the model resolution / Data assimilation with explicit convection
+- Study of increased predictability of deep convection from satellite data assimilation
+- Assimilate new observation from:
+  - GPS Radio occultation (RO) refractivity ?
+  - Doppler radar radial velocities ?
+  - Radar reflectivity ?
+
+???
+
+Estudio del incremento de la predictibilidad de la convección profunda en los casos seleccionados a partir de la inclusión de los datos de satélite. Se utilizará la técnica Ensemble Sensitivity to Observations (EFSO, Kalnay et al. 2012) para determinar el impacto relativo de los diferentes conjuntos de observaciones en la calidad de los análisis y pronósticos a corto plazo
 ---
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
